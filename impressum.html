@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressum – Feldenkrais mit Max</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;500;700&display=swap" rel="stylesheet">
+<!-- Font Awesome Icon Set -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: #f7f4f8;
+            color: #333;
+            margin: 0;
+        }
+
+        header {
+            height: 30vh;
+            background: linear-gradient(120deg, #924ca4, #cba4d7);
+            color: white;
+            text-align: center;
+            justify-content: center;
+            padding: 80px 20px;
+            position:relative;
+        }
+
+        header h1 {
+            font-size: 2.6rem;
+            margin: 0;
+        }
+
+        section {
+            max-width: 900px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+        }
+
+        h2, h3 {
+            color: #804a7b;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #ede3ef;
+            margin-top: 60px;
+            color: #555;
+        }
+
+        a {
+            color: #824c96;
+        }
+
+                /* --- NAVIGATION --- */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(10px);
+    padding: 0px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+nav .logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #6f3b7d;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #6a456f;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+nav ul li a:hover {
+    color: #924ca4;
+}
+
+/* Mobile */
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+@media (max-width: 720px) {
+    nav ul {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: rgba(255,255,255,0.95);
+        flex-direction: column;
+        width: 200px;
+        padding: 20px;
+        border-radius: 0 0 0 12px;
+        display: none;
+    }
+
+    nav ul.open {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+        color: #6f3b7d;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+<nav>
+    <div class="logo"></div>
+
+    <div class="menu-toggle"><i class="fa-solid fa-bars"></i></div>
+
+    <ul>
+        <li><a href="251121Website.html">Start</a></li>
+        <li><a href="251121Website.html#Angebote">Angebote</a></li>
+        <li><a href="251121Website.html#kontakt">Kontakt</a></li>
+        <li><a href="impressum.html">Impressum</a></li>
+    </ul>
+</nav>
+<header>
+    <h1>Impressum</h1>
+</header>
+
+<section>
+    <h2>Angaben gemäß § 5 TMG</h2>
+
+    <p>
+        <strong>Max &lt;Appelhoff&gt;</strong><br>
+        &lt;Schweriner Straße 2&gt;<br>
+        59425 Unna<br>
+        Deutschland
+    </p>
+
+    <h3>Kontakt</h3>
+    <p>
+        Telefon: &lt;Telefonnummer einfügen&gt;<br>
+        E-Mail: <a href="mailto:max-feldenkrais@gmx.de">max-feldenkrais@gmx.de</a>
+    </p>
+
+    <h3>Berufsbezeichnung</h3>
+    <p>Feldenkrais® Practitioner</p>
+
+    <h3>Haftung für Inhalte</h3>
+    <p>
+        Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten verantwortlich.
+        Nach §§ 8 bis 10 TMG sind wir jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen.
+        Verpflichtungen zur Entfernung oder Sperrung von Informationen bleiben hiervon unberührt.
+    </p>
+
+    <h3>Haftung für Links</h3>
+    <p>
+        Für externe Links übernehmen wir keine Haftung. Für Inhalte der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.
+    </p>
+
+    <h3>Urheberrecht</h3>
+    <p>
+        Die Inhalte dieser Seite unterliegen dem deutschen Urheberrecht. Vervielfältigung ist ohne Zustimmung des Erstellers nicht gestattet.
+    </p>
+
+    <p style="font-size: 0.9rem; color: #666; margin-top: 20px;">
+        
+    </p>
+</section>
+
+<footer>
+    © 2025 – Feldenkrais mit Max • <a href="datenschutz.html">Datenschutzerklärung</a>
+</footer>
+<!--Navigation-->
+<script>
+const toggle = document.querySelector(".menu-toggle");
+const navList = document.querySelector("nav ul");
+
+toggle.addEventListener("click", () => {
+    navList.classList.toggle("open");
+});
+</script>
+</body>
+</html>
