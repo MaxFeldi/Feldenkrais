@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feldenkrais – Angebote</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: #f7f4f8;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* --- HEADER --- */
+        header {
+            height: 60vh;
+            background: linear-gradient(120deg, #924ca4, #cba4d7);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            animation: fadeIn 1.2s ease-in-out;
+
+            position:relative;
+        }
+
+        header::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 500px;  /* Länge des Fades */
+            background: linear-gradient(
+                     to bottom,
+                     rgba(255,255,255,0) 0%,
+                     rgba(247,244,248,0.5) 50%,
+                     #f7f4f8 100%
+    );
+    pointer-events: none;
+}
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        header p {
+            font-size: 1.3rem;
+            margin-top: 10px;
+            color: #f8f8f8;
+            opacity: 0.9;
+        }
+
+        /* --- SECTION GENERAL --- */
+        section {
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 0 20px;
+            animation: fadeSlideUp 0.8s ease-in-out;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            color: #804a7b;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #444;
+        }
+
+        /* --- CARDS --- */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 14px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+            transition: 0.3s ease;
+            min-height: 400px;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .card i {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #9a6ea7;
+        }
+        .card {
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.card.is-flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 14px;
+    padding: 25px;
+}
+
+.card-back {
+    background: #f1e6f5;
+    transform: rotateY(180deg);
+}
+
+        /* --- CONTACT BOX --- */
+        .contact-box {
+            margin-top: 20px;
+            background: rgb(255, 255, 255);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #ede3ef;
+            margin-top: 60px;
+            color: #555555;
+        }
+
+        /* --- ANIMATIONS --- */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeSlideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+
+        /* --- NAVIGATION --- */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(10px);
+    padding: 12px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+nav .logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #6f3b7d;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #6a456f;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+nav ul li a:hover {
+    color: #924ca4;
+}
+
+/* Mobile */
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+@media (max-width: 720px) {
+    nav ul {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: rgba(255,255,255,0.95);
+        flex-direction: column;
+        width: 200px;
+        padding: 20px;
+        border-radius: 0 0 0 12px;
+        display: none;
+    }
+
+    nav ul.open {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+        color: #6f3b7d;
+    }
+}
+
+    </style>
+</head>
+<body>
+<nav>
+    <div class="logo"></div>
+
+    <div class="menu-toggle"><i class="fa-solid fa-bars"></i></div>
+
+    <ul>
+        <li><a href="251121Website.html">Start</a></li>
+        <li><a href="251121Website.html#Angebote">Angebote</a></li>
+        <li><a href="251121Website.html#kontakt">Kontakt</a></li>
+        <li><a href="impressum.html">Impressum</a></li>
+    </ul>
+</nav>
+
+    <!-- HERO SECTION -->
+    <header>
+        <h1>Feldenkrais</h1>
+        <p>"Unmögliches möglich, schweres leicht und einfaches elegant"</p>
+        <p>----Moshe Feldenkrais----</p>
+    </header>
+
+    <!-- ABOUT -->
+    <section>
+        <h2>Über mich</h2>
+         <div style="display: flex;  align-items: center; gap: 20px;">
+
+       <div style: "flex:1;">
+        <p>
+            Willkommen! <br>Ich bin <strong>Max</strong>, Feldenkrais®-Practicioner aus Unna.<br>
+            Seit über 10 Jahren beschäftige ich mich intensiv mit der Feldenkraismethode® und 
+            freue mich jedes mal aufs neue darüber in Kontakt zu kommen.
+            
+           <br> Offenheit, Interesse und Neugier sehe ich als elementaren Bestandteil dieser Methode.
+
+          <!-- <p> <br>Neben meiner freiberuflichen Tätigkeit als Feldenkrais Practicioner bin ich als angestellter SPS-Programmierer tätig.
+            Auf den ersten Blick zwei konträre Berufsfelder. Bei genauerem Hinsehen finde ich immer mehr Parallelen.
+        
+            Immer neue Herausforderungen die <strong>Lösung</strong>sfindungen benötigen, viele kleine Elemente die ineinander übergreifen um ein 
+            verbundens Gesamtergebnis zu erreichen, von Einfachen ins Komplexe und die Dinge von verschiedenen Seiten angehen.</p>
+        </p>
+        <p>-->
+            In meinen Feldenkrais-Kursen versuche ich einen Lernraum für alle Teilnehmenden zu schaffen, um <strong>Leichtigkeit,
+            Klarheit und Präsenz</strong> zu erleben und sich in und aus eigenen <strong>Mustern</strong> zu bewegen.
+        </p>
+    </div>
+         <img src="_IK13297kHauptbild (002).jpg" alt="Max" style="max-width: 20%; height: auto; border-radius: 10px;">
+         </div>
+    </section>
+
+    <!-- OFFERS -->
+    <section id="Angebote">
+        <h2>Meine Feldenkrais-Angebote</h2>
+
+        <div class="card-grid">
+
+          <div class="card">
+  <div class="card-inner">
+    <div class="card-front">
+      <i class="fa-solid fa-person-praying"></i>
+      <h3>Gruppenstunden – ATM</h3>
+      <p>Sanfte, angeleitete Bewegungssequenzen.</p>
+    </div>
+
+    <div class="card-back">
+      <h3>Termine</h3>
+      <p> <a target="blank" href="https://vhs-zib.de/programm/gesundheit/feldenkrais/kurs/Feldenkrais-fuer-Teilnehmende-mit-und-ohne-Vorerfahrungen/252-6168#inhalt">
+        • Mittwochs 18:15 – 19:15 </a></p> 
+        &nbsp;&nbsp; Ort:VHS Unna
+
+
+       <p><a target="blank" href="https://vhs-zib.de/programm/gesundheit/feldenkrais/kurs/Feldenkrais-fuer-Teilnehmende-mit-und-ohne-Vorerfahrungen/252-6170#inhalt">
+     <br>• Freitags 17:30 – 18:30</a></p>
+     &nbsp;&nbsp; Ort:VHS Unna
+    </div>
+  </div>
+</div>
+
+
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                <i class="fa-solid fa-hands"></i>
+                <h3>Einzelarbeit – FI</h3>
+                <p>
+                    Individuelle Einheiten, angepasst an deine
+                    Bedürfnisse und Ziele.
+                </p>
+            </div>
+            <div class="card-back">
+                <h3>Termine</h3>
+                <p>Zeiten und Ort nach individueller Absprache</p>
+                <p><a href=mailto:"max-feldenkrais@gmx.de">max-feldenkrais@gmx.de</a></p>
+            </div>
+            </div>
+            </div>
+
+            <div class="card">
+                 <div class="card-inner">
+                    <div class="card-front">
+                <i class="fa-solid fa-leaf"></i>
+                <h3>Workshops</h3>
+                <p>
+                    Themenorientierte Feldenkrais-Workshops für Vertiefung,
+                    Regeneration und bewusstes Lernen.
+                </p>
+                    </div>
+                 <div class="card-back">
+                <h3>Termine</h3>
+                <p>•  <a target="_blank" href="https://vhs-zib.de/programm/gesundheit/feldenkrais/kurs/Workshop-von-Fuss-bis-Kopf-Einblicke-in-die-Feldenkrais-Methode/252-6172#inhalt">
+                 11.1.26</a><!--<br>&nbsp;&nbsp;Einblicke in die &nbsp;&nbsp;Feldenkraismethode --><br> &nbsp;&nbsp;<strong>Ort: </strong>VHS Unna</p>
+  <p> </p> <p> </p>     
+               <p> • <a target="_blank" href="https://vhs-zib.de/programm/gesundheit/feldenkrais/kurs/Workshop-von-Fuss-bis-Kopf-Einblicke-in-die-Feldenkrais-Methode/261-6172#inhalt">
+               15.3.26 </a><!--<br>&nbsp;&nbsp;Einblicke in die &nbsp;&nbsp;Feldenkraismethode--> <br> &nbsp;&nbsp;<strong>Ort: </strong>VHS Unna</p>
+<p> </p><p> </p><br><br>
+                <p>• <!--<a target="_blank" href="https://vhs-zib.de/programm/gesundheit/feldenkrais/kurs/Feldenkrais-fuer-Teilnehmende-mit-und-ohne-Vorerfahrungen/252-6168#inhalt">
+                 -->19.4.26</a><!--<br> &nbsp;&nbsp;Einblicke in die &nbsp;&nbsp;Feldenkraismethode--> <br> &nbsp;&nbsp;<strong>Ort: </strong>Bürgerhaus &nbsp;&nbsp;Wickede
+                 <br> &nbsp;&nbsp;Anmeldung an 
+                 <br> &nbsp;&nbsp;info@vhs-werl.de
+        </p>
+        
+            </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="kontakt">
+        <h2>Kontakt</h2>
+        <p>Für Fragen oder Terminvereinbarungen freue ich mich über eine Nachricht:</p>
+
+        <div class="contact-box">
+            <p><strong>Email: </strong><a href=mailto:"max-feldenkrais@gmx.de">max-feldenkrais@gmx.de</a></p>
+           <!-- <p><strong>Telefon:</strong> 0123 456789</p>-->
+            <!--<p><strong>Ort:</strong> Unna</p>-->
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        © 2025 – Feldenkrais mit Max<br>
+        <a href="impressum.html">Impressum</a>
+    </footer>
+
+
+
+<!--cards-->
+<script>
+document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('click', () => {
+        card.classList.toggle('is-flipped');
+    });
+});
+</script>
+<!--Navigation-->
+<script>
+const toggle = document.querySelector(".menu-toggle");
+const navList = document.querySelector("nav ul");
+
+toggle.addEventListener("click", () => {
+    navList.classList.toggle("open");
+});
+</script>
+
+
+
+</body>
+</html>
